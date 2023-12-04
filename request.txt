@@ -1,0 +1,36 @@
+mutation CreateJobListing($input: CreateJobListingInput!)
+{ createJobListing(input:$input)
+  { _id title description company url }
+}
+
+mutation UpdateJob($id: ID!,$input: UpdateJobListingInput!)
+{ updateJobListing(id:$id,input:$input)
+  { title description _id company url }
+}
+
+mutation DeleteJob ($id: ID!){
+  deleteJobListing(id:$id){
+    deleteJobId
+  }
+}
+
+query GetJobs{ jobs
+  { _id title description url company }
+}
+
+query GetsingleJob($id: ID!)
+{ job(id:$id)
+  { _id title description url company }
+}
+
+
+payload 
+
+{ "id": "4" ,
+  "input": {
+    "title": "updated -45",
+    "company": "company updated",
+    "url": "url1",
+    "description": "des1112"
+  }
+}
